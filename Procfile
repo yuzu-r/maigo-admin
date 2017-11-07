@@ -1,2 +1,1 @@
-web: react-scripts start
-api: node server.js
+web: yarn start:prod
