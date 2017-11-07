@@ -108,9 +108,10 @@ router.route('/gyms/:gym_id')
 
 // Serve static files from the React app
 var staticFiles = express.static(path.join(__dirname, 'build'));
-app.use('/*', staticFiles);
+app.use(staticFiles);
 //Use our router configuration when we call /api
 app.use('/api', router);
+app.use('/*', staticFiles);
 //starts the server and listens for requests
 app.listen(port, function() {
  console.log(`api running on port ${port}`);
