@@ -2,6 +2,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 var app = express();
 var router = express.Router();
@@ -104,6 +105,9 @@ router.route('/gyms/:gym_id')
 			return res.status(200).json({success: true, message: 'gym was deleted'});
 		});
 	})
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
 
 //Use our router configuration when we call /api
 app.use('/api', router);
