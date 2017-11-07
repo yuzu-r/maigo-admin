@@ -1,23 +1,19 @@
 {
   "name": "maigo-admin",
   "version": "0.1.0",
-  "proxy": "http://localhost:8080",  
-  "private": true,
+  "main": "index.js",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "foreman": "^2.0.0",
-    "mongoose": "^4.12.6",
-    "nodemon": "^1.12.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.16"
+  "concurrently": "^3.5.0"
   },
+  "engines": {
+    "node": "7.2.0"
+  },  
   "scripts": {
-    "start": "react-scripts start",
-    "start-dev": "nf start -p 3000",    
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "concurrently \"cd client && yarn build\" \"cd server && yarn build\"",
+    "heroku-postbuild": "yarn build",
+    "install": "(cd client && yarn) && (cd server && yarn)",
+    "start": "concurrently \"cd client && PORT=3000 yarn start\" \"cd server && PORT=8080 yarn start\"",
+    "start:prod": "cd server && yarn start:prod"
   }
 }
