@@ -107,8 +107,8 @@ router.route('/gyms/:gym_id')
 	})
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'build')));
-
+var staticFiles = express.static(path.join(__dirname, 'build'));
+app.use('/*', staticFiles);
 //Use our router configuration when we call /api
 app.use('/api', router);
 //starts the server and listens for requests
