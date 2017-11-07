@@ -6,7 +6,7 @@ var path = require('path');
 
 var app = express();
 var router = express.Router();
-var port = process.env.API_PORT || 8080;
+var port = process.env.PORT || 8080;
 
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pogo';
 var Gym = require('./model/gyms');
