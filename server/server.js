@@ -10,12 +10,30 @@ var port = process.env.PORT || 8080;
 
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pogo';
 var Gym = require('./model/gyms');
+var Boss = require('./model/bosses');
+var Raid = require('./model/raids');
 
 console.log('mongo connect: ', mongoURI);
 mongoose.connect(mongoURI, {useMongoClient: true});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+
+router.route('/raids')
+	.get(function(req,res) {
+		Raid.find({})
+		.populate('gym','name')
+		.populate('boss')
+		.exec(function(err,raids){
+			if(err) {
+				return res.status(400).json({
+					success: false,
+					message: 'Unable to retrieve raids ' + err
+				})
+			}
+			return res.status(200).json({success: true, raids: raids});
+		})
+	})
 
 router.route('/gyms')
 	.get(function(req,res) {
