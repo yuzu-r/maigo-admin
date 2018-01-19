@@ -1,0 +1,50 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, p {
+  margin-left: 60px;
+}
+
+.axis text {
+  font-size: 11px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+  stroke-width: 2;
+}
+
+.tip {
+  white-space: pre-wrap; /* to get linebreak in div */
+  font-size: 13px;
+  position: absolute;
+  z-index: 100;
+  border-radius: 5%;
+  padding: 3px;
+  pointer-events: visibleFill;
+}
+
+.zoom {
+  z-index: 1;
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+
+.raid {
+  z-index: 10;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.5;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0.01;  /* this can't be zero, causes problems with zoom */
+}
