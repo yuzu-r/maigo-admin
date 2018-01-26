@@ -262,6 +262,7 @@ class RaidScatterplot extends Component {
     }
   }	
  	render() {
+    console.log('rendering plot ', this.props.data.length);
 		return (
 			<svg 
 				ref={node => this.node = node} 

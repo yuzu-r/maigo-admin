@@ -1,5 +1,14 @@
 body {
-  margin: 10px;
+  margin: 0px;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+.tiny-indent {
+	margin-left: 5px;
+}
+
+.no-indent {
+	margin-left: 0px;
+	padding-left: 0px;
 }

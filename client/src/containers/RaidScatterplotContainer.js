@@ -11,6 +11,7 @@ class RaidScatterplotContainer extends Component {
 		this.loadRaidsFromServer = this.loadRaidsFromServer.bind(this);
 	}
 	async loadRaidsFromServer(){
+		console.log('fetching data');
 		try {
 			let response = await fetch('/api/raids');
 			let data = await response.json();
@@ -24,6 +25,7 @@ class RaidScatterplotContainer extends Component {
 		setInterval(this.loadRaidsFromServer, this.props.pollInterval);
 	}
 	render() {
+		console.log('in render - container ', this.state.raids.length);
 		let scatterplot = null;
 		if (this.state.isLoading) {
 			scatterplot = <h3>Raids are loading, please wait ... </h3>
