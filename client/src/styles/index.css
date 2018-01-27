@@ -12,3 +12,13 @@ body {
 	margin-left: 0px;
 	padding-left: 0px;
 }
+
+.active-chart {
+	color: red;
+}
+
+.mock {
+	background-color: lightyellow;
+	height: 700px;
+	width: 1000px;
+}

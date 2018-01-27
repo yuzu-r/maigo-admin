@@ -1,7 +1,7 @@
 body {
   font-family: 'Lato', sans-serif;
 }
-
+/* why is this here? */
 h1, p {
   margin-left: 60px;
 }
@@ -47,4 +47,12 @@ h1, p {
 
 .grid path {
   stroke-width: 0.01;  /* this can't be zero, causes problems with zoom */
+}
+
+.title-text {
+  font-size: 22px;
+}
+
+.top-spacer {
+  margin-top: 30px;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import registerServiceWorker from './registerServiceWorker';
 import './styles/index.css';
-import RaidScatterplotContainer from './containers/RaidScatterplotContainer';
 import DataVisContainer from './containers/DataVisContainer';
 /*
 ReactDOM.render(<RaidScatterplotContainer pollInterval={20000} />, document.getElementById('root'));

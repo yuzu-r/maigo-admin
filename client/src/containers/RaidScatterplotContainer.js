@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RaidScatterplot from '../components/RaidScatterplot';
+import '../styles/raidplot.css'
 
 class RaidScatterplotContainer extends Component {
 	constructor(props) {
@@ -25,10 +26,9 @@ class RaidScatterplotContainer extends Component {
 		setInterval(this.loadRaidsFromServer, this.props.pollInterval);
 	}
 	render() {
-		console.log('in render - container ', this.state.raids.length);
 		let scatterplot = null;
 		if (this.state.isLoading) {
-			scatterplot = <h3>Raids are loading, please wait ... </h3>
+			scatterplot = <h4 className = 'text-center top-spacer'>... raids are loading, please wait ... </h4>
 		}
 		else {
 			scatterplot = <RaidScatterplot data={this.state.raids} />
@@ -36,11 +36,6 @@ class RaidScatterplotContainer extends Component {
 
 		return (
 			<div>
-				<h1>Pokémon Go Hatch Tracker</h1>
-				<p>
-					I've been tracking the gyms near me to see how often they host raid bosses.
-					See any patterns?
-				</p>
 				{scatterplot}	
 			</div>
 		)
