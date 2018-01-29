@@ -1,5 +1,30 @@
 body {
-  margin: 10px;
+  margin: 0px;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
+}
+
+.tiny-indent {
+	margin-left: 5px;
+}
+
+.no-indent {
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.btn-link.active-chart {
+	color: #7AE7C7;
+}
+
+.btn-link {
+	color: #E1EFF6;
+}
+
+.btn-link:hover {
+	color: #E1EFF6;
+}
+
+.header-text-top {
+	margin-top: 8px;
 }

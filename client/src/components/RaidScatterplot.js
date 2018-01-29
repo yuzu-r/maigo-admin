@@ -188,7 +188,7 @@ class RaidScatterplot extends Component {
       .attr('y', margin.top)
       .attr('class', 'title-text')
       .attr('text-anchor', 'middle')  
-      .text('Hatch Frequency of Nearby Gyms');
+      .text('Raid History of Nearby Gyms');
     
     context.append('g')
       .attr('class', 'axis axis--x')

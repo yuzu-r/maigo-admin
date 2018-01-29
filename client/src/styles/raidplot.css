@@ -2,10 +2,6 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h1, p {
-  margin-left: 60px;
-}
-
 .axis text {
   font-size: 11px;
 }
@@ -48,3 +44,12 @@ h1, p {
 .grid path {
   stroke-width: 0.01;  /* this can't be zero, causes problems with zoom */
 }
+
+.title-text {
+  font-size: 22px;
+}
+
+.top-spacer {
+  margin-top: 30px;
+}
+
