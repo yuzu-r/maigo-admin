@@ -10,7 +10,7 @@ class DataVisHeader extends Component {
 			<div>		
 	      <div className="navbar navbar-dark bg-dark navbar-fixed-top">
 	        <div className="container d-flex justify-content-between">
-            <h3 className="text-white">Pokémon Go Raid Visualizations</h3>
+            <h3 className="text-white header-text-top">Pokémon Go Raid Visualizations</h3>
 	          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
 	            <span className="navbar-toggler-icon"></span>
 	          </button>
@@ -53,7 +53,7 @@ class DataVisHeader extends Component {
 	            </div>
 	            <div className="col-sm-7">
 	              <h4 className="text-white">About</h4>
-	              <p className="text-white text-left tiny-indent">Add some information about how the data was collected, etc. Link to portfolio.</p>
+	              <p className="text-white text-left tiny-indent">I collected raid egg data over a two week period for nearby PoGo gyms. Here I used d3 to display the results of my observation period.</p>
 	            </div>
 	          </div>
 	        </div>

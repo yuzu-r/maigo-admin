@@ -13,12 +13,18 @@ body {
 	padding-left: 0px;
 }
 
-.active-chart {
-	color: red;
+.btn-link.active-chart {
+	color: #7AE7C7;
 }
 
-.mock {
-	background-color: lightyellow;
-	height: 700px;
-	width: 1000px;
+.btn-link {
+	color: #E1EFF6;
+}
+
+.btn-link:hover {
+	color: #E1EFF6;
+}
+
+.header-text-top {
+	margin-top: 8px;
 }

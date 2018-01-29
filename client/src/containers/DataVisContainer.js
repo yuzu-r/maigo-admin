@@ -7,7 +7,7 @@ class DataVisContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: 'stacked'
+			active: 'scatter'
 		}
 		this.changeView = this.changeView.bind(this);
 	}
@@ -25,7 +25,7 @@ class DataVisContainer extends Component {
 			graphic = <RaidStackedContainer />
 		}
 		else if (this.state.active === 'pie') {
-			graphic = <div className='mock'><p>pie!</p><img alt='hi' src='http://via.placeholder.com/950x650' /></div>
+			graphic = <div className='container-fluid'><br/><h3 className='text-center'>coming soon!</h3></div>
 		}
 		return (
 			<div>
