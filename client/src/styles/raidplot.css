@@ -1,10 +1,6 @@
 body {
   font-family: 'Lato', sans-serif;
 }
-/* why is this here? */
-h1, p {
-  margin-left: 60px;
-}
 
 .axis text {
   font-size: 11px;
@@ -56,3 +52,4 @@ h1, p {
 .top-spacer {
   margin-top: 30px;
 }
+

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import RaidScatterplot from '../components/RaidScatterplot';
+import RaidStacked from '../components/RaidStacked';
 import '../styles/raidplot.css'
 
-class RaidScatterplotContainer extends Component {
+class RaidStackedContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -24,20 +24,20 @@ class RaidScatterplotContainer extends Component {
 		this.loadRaidsFromServer();
 	}
 	render() {
-		let scatterplot = null;
+		let stacked = null;
 		if (this.state.isLoading) {
-			scatterplot = <h4 className = 'text-center top-spacer'>... raids are loading, please wait ... </h4>
+			stacked = <h4 className = 'text-center top-spacer'>... raids are loading, please wait ... </h4>
 		}
 		else {
-			scatterplot = <RaidScatterplot data={this.state.raids} />
+			stacked = <RaidStacked data={this.state.raids} />
 		}
 
 		return (
 			<div>
-				{scatterplot}	
+				{stacked}	
 			</div>
 		)
 	}
 }
 
-export default RaidScatterplotContainer;
+export default RaidStackedContainer;

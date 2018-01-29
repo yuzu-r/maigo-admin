@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import DataVisHeader from '../components/DataVisHeader';
 import RaidScatterplotContainer from './RaidScatterplotContainer';
+import RaidStackedContainer from './RaidStackedContainer';
 
 class DataVisContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: 'scatter'
+			active: 'stacked'
 		}
 		this.changeView = this.changeView.bind(this);
 	}
@@ -18,10 +19,10 @@ class DataVisContainer extends Component {
 	render (){
 		let graphic = {};
 		if (this.state.active === 'scatter') {
-			graphic = <RaidScatterplotContainer pollInterval={120000} />
+			graphic = <RaidScatterplotContainer  />
 		}
 		else if (this.state.active === 'stacked') {
-			graphic = <div className='mock'><p>stacked!</p><img alt='hi' src='http://via.placeholder.com/950x650' /></div>
+			graphic = <RaidStackedContainer />
 		}
 		else if (this.state.active === 'pie') {
 			graphic = <div className='mock'><p>pie!</p><img alt='hi' src='http://via.placeholder.com/950x650' /></div>
