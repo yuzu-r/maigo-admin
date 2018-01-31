@@ -32,7 +32,7 @@ class GymListContainer extends Component {
 					<h5 className = 'tiny-indent'>Local Gym List
 						<small className='text-muted'>&nbsp;&nbsp;&nbsp;<NavLink to = '/'>return to data visualizations</NavLink></small>
 					</h5>
-					<p className='tiny-indent'>Note: The address data only appears as a link if google maps data exists for the gym. Google maps will open in a separate browser tab.</p>
+					<p className='tiny-indent'>Google maps link (if it exists) will open in a separate browser tab.</p>
 				</div>
 				<GymList gyms={this.state.gyms} isLoading={this.state.isLoading} />
 			</div>
