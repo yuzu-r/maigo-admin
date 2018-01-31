@@ -1,0 +1,17 @@
+.gymname {
+	font-weight: bold;
+	font-size: 16px;
+	margin: 5px;
+}
+
+.gymdata {
+	font-size: 14px;
+}
+
+p.gymdata {
+	margin: 0 5px;
+}
+
+.gymdata:last-child {
+  margin-bottom:13px;
+}
