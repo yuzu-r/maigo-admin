@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../styles/index.css';
 
 class DataVisHeader extends Component {
@@ -49,11 +50,14 @@ class DataVisHeader extends Component {
 	                		Raid Boss Frequency
 	                	</button>
 	                </li>
+	                <li>
+	                	<NavLink className = {inactiveButtonClass} to = "/gyms">Local Gym List</NavLink>
+	                </li>
 	              </ul>
 	            </div>
 	            <div className="col-sm-7">
 	              <h4 className="text-white">About</h4>
-	              <p className="text-white text-left tiny-indent">I collected raid egg data over a two week period for nearby PoGo gyms. Here I used d3 to display the results of my observation period.</p>
+	              <p className="text-white text-left tiny-indent">I collected raid egg data over a two week period for nearby PoGo gyms. Here are some d3 visualizations displaying the results of my observation period.</p>
 	            </div>
 	          </div>
 	        </div>
