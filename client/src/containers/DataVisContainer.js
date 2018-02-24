@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DataVisHeader from '../components/DataVisHeader';
 import RaidScatterplotContainer from './RaidScatterplotContainer';
 import RaidStackedContainer from './RaidStackedContainer';
+import RaidPieContainer from './RaidPieContainer';
 
 class DataVisContainer extends Component {
 	constructor(props) {
@@ -25,7 +26,7 @@ class DataVisContainer extends Component {
 			graphic = <RaidStackedContainer />
 		}
 		else if (this.state.active === 'pie') {
-			graphic = <div className='container-fluid'><br/><h3 className='text-center'>coming soon!</h3></div>
+			graphic = <RaidPieContainer />
 		}
 		return (
 			<div>
