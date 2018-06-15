@@ -13,6 +13,8 @@ var Gym = require('./model/gyms');
 var Boss = require('./model/bosses');
 var Raid = require('./model/raids');
 
+var stringToBoolean = require('./helpers/utilities.js');
+
 console.log('mongo connect: ', mongoURI);
 mongoose.connect(mongoURI, {useMongoClient: true});
 
@@ -54,6 +56,8 @@ router.route('/gyms')
 		gym.landmark = req.body.landmark;
 		gym.aliases = req.body.aliases;
 		gym.gmap = req.body.gmap;
+		(req.body.is_ex_eligible) ? gym.is_ex_eligible = stringToBoolean(req.body.is_ex_eligible) : null;
+		
 		gym.save(function(err) {
 			if(err) {
 				console.log('error in creating gym');
@@ -92,6 +96,8 @@ router.route('/gyms/:gym_id')
 				}
 				gym.aliases = squashedAliases;
 			}
+			// careful, don't edit if not present in request
+			(req.body.is_ex_eligible) ? gym.is_ex_eligible = stringToBoolean(req.body.is_ex_eligible) : null;
 			gym.save(function(err) {
 				if (err) {
 					if (err.name === 'MongoError' && err.code === 11000) {

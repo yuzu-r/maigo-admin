@@ -9,6 +9,7 @@ class Gym extends Component {
 		}
 		let mapAddress = this.props.gym.address;
 		let gmapLink = this.props.gym.gmap;
+		let isExRaidEligible = this.props.gym.is_ex_eligible;
 		let gmap = 'Google Maps link is missing.'
 		if (gmapLink !== undefined) {
 			gmap = <a href={gmapLink} target="_blank">Google Maps Link</a>
@@ -16,6 +17,7 @@ class Gym extends Component {
 		return(
 			<div className = 'tiny-indent'>
 				<h5 className = 'gymname'>{this.props.gym.name} ({this.props.gym["_id"]})</h5>
+				<p className = 'gymdata'>Ex Raid Eligible: {isExRaidEligible ? "YES" : "" }</p>
 				<p className = 'gymdata'>{gmap}</p>
 				<p className = 'gymdata'>Address: {mapAddress}</p> 
 				<p className = 'gymdata'>Landmark: {this.props.gym.landmark}</p>
