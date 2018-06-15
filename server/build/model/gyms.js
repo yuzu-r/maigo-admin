@@ -8,7 +8,8 @@ var GymsSchema = new Schema({
 	address: { type: String, max: 999 },
 	landmark: { type: String, max: 999 },
 	gmap: { type: String, max: 999 },
-	aliases: [String]
+	aliases: [String],
+	is_ex_eligible: { type: Boolean }
 });
 
 GymsSchema.index({ name: 1 }, { unique: true });
