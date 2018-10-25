@@ -1,0 +1,18 @@
+rect.whereis:hover { 
+  fill: #F9C80E;
+}
+
+.tooltip-whereis {
+	width: 100px;
+	height: 20px;
+  white-space: pre-wrap;   
+  z-index: 100;
+  opacity: 0.75;
+  fill: #F9C80E;
+}
+
+rect.tooltip-whereis{
+  fill: #F9C80E;;
+  opacity: 0.75;
+}
+

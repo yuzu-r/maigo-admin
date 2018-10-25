@@ -26,6 +26,15 @@ class DataVisHeader extends Component {
 	                <li>
 	                	<button 
 	                		type="button" 
+	                		className = {this.props.active === 'whereis' ? activeButtonClass : inactiveButtonClass} 
+	                		onClick = {this.props.changeView.bind(this,'whereis')}
+	                	>
+	                		Local Gym Lookup Usage over Time
+	                	</button>
+	                </li>	              
+	                <li>
+	                	<button 
+	                		type="button" 
 	                		className = {this.props.active === 'scatter' ? activeButtonClass : inactiveButtonClass} 
 	                		onClick = {this.props.changeView.bind(this,'scatter')}
 	                	>
@@ -57,6 +66,7 @@ class DataVisHeader extends Component {
 	            </div>
 	            <div className="col-sm-7">
 	              <h4 className="text-white">About</h4>
+	              <p className="text-white text-left tiny-indent">New chart! shows successful and unsuccessful ?whereis commmands since maigo-helper went live on EC Pokemon GO Discord. </p>
 	              <p className="text-white text-left tiny-indent">I collected raid egg data over a two week period for nearby PoGo gyms. Here are some d3 visualizations displaying the results of my observation period.</p>
 	            </div>
 	          </div>
