@@ -134,7 +134,12 @@ router.route('/gyms/:gym_id')
 
 router.route('/logs')
 	.get(function(req,res) {
-		Log.find({'server_id': serverID })
+		let query = { server_id: serverID };
+		if (req.query.command) {
+			query.command = req.query.command;
+		}
+
+		Log.find(query)
 		.exec(function(err,logs){
 			if(err) {
 				return res.status(400).json({
@@ -148,7 +153,11 @@ router.route('/logs')
 
 router.route('/lookups')
 	.get(function(req,res) {
-		Log.find({'server_id': serverID, 'command': 'whereis' })
+		Log.find(
+			{'server_id': serverID, 'command': 'whereis' }, 
+			{ '_id': 0, 'server_id': 0, 'command': 0}
+		)
+		.sort({'insert_date': 1})
 		.exec(function(err,lookups){
 			if(err) {
 				return res.status(400).json({

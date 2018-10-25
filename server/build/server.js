@@ -10,13 +10,16 @@ var router = express.Router();
 var port = process.env.PORT || 8080;
 
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pogo';
+var serverID = process.env.SERVER_ID || '409237365538816000';
 var Gym = require('./model/gyms');
 var Boss = require('./model/bosses');
 var Raid = require('./model/raids');
+var Log = require('./model/logs');
 
 var stringToBoolean = require('./helpers/utilities.js');
 
 console.log('mongo connect: ', mongoURI);
+console.log('wtf');
 mongoose.connect(mongoURI, { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -118,6 +121,32 @@ router.route('/gyms/:gym_id').put(function (req, res) {
 			});
 		}
 		return res.status(200).json({ success: true, message: 'gym was deleted' });
+	});
+});
+
+router.route('/logs').get(function (req, res) {
+	// pass in whereis, raid, egg ... 
+	console.log('option: ', req.query.command);
+	Log.find({ 'server_id': serverID, 'command': 'egg' }).exec(function (err, logs) {
+		if (err) {
+			return res.status(400).json({
+				success: false,
+				message: 'Unable to retrieve logs ' + err
+			});
+		}
+		return res.status(200).json({ success: true, logs: logs });
+	});
+});
+
+router.route('/lookups').get(function (req, res) {
+	Log.find({ 'server_id': serverID, 'command': 'whereis'}).exec(function (err, lookups) {
+		if (err) {
+			return res.status(400).json({
+				success: false,
+				message: 'Unable to retrieve lookups ' + err
+			});
+		}
+		return res.status(200).json({ success: true, lookups: lookups });
 	});
 });
 

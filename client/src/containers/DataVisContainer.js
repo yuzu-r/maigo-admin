@@ -3,12 +3,13 @@ import DataVisHeader from '../components/DataVisHeader';
 import RaidScatterplotContainer from './RaidScatterplotContainer';
 import RaidStackedContainer from './RaidStackedContainer';
 import RaidPieContainer from './RaidPieContainer';
+import WhereisStackedContainer from './WhereisStackedContainer';
 
 class DataVisContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			active: 'scatter'
+			active: 'whereis'
 		}
 		this.changeView = this.changeView.bind(this);
 	}
@@ -27,6 +28,9 @@ class DataVisContainer extends Component {
 		}
 		else if (this.state.active === 'pie') {
 			graphic = <RaidPieContainer />
+		}
+		else if (this.state.active === 'whereis') {
+			graphic = <WhereisStackedContainer />
 		}
 		return (
 			<div>
