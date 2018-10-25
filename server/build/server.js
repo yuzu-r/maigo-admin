@@ -19,7 +19,6 @@ var Log = require('./model/logs');
 var stringToBoolean = require('./helpers/utilities.js');
 
 console.log('mongo connect: ', mongoURI);
-console.log('wtf');
 mongoose.connect(mongoURI, { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -125,9 +124,12 @@ router.route('/gyms/:gym_id').put(function (req, res) {
 });
 
 router.route('/logs').get(function (req, res) {
-	// pass in whereis, raid, egg ... 
-	console.log('option: ', req.query.command);
-	Log.find({ 'server_id': serverID, 'command': 'egg' }).exec(function (err, logs) {
+	let query = { server_id: serverID };
+	if (req.query.command) {
+		query.command = req.query.command;
+	}
+
+	Log.find(query).exec(function (err, logs) {
 		if (err) {
 			return res.status(400).json({
 				success: false,
@@ -139,7 +141,7 @@ router.route('/logs').get(function (req, res) {
 });
 
 router.route('/lookups').get(function (req, res) {
-	Log.find({ 'server_id': serverID, 'command': 'whereis'}).exec(function (err, lookups) {
+	Log.find({ 'server_id': serverID, 'command': 'whereis' }, { '_id': 0, 'server_id': 0, 'command': 0 }).sort({ 'insert_date': 1 }).exec(function (err, lookups) {
 		if (err) {
 			return res.status(400).json({
 				success: false,
