@@ -9,8 +9,9 @@ var app = express();
 var router = express.Router();
 var port = process.env.PORT || 8080;
 
-var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pogo';
-var serverID = process.env.SERVER_ID || '409237365538816000';
+//var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/pogo';
+var mongoURI = process.env.DB_CONNECTION;
+var serverID = process.env.SERVER_ID;
 var Gym = require('./model/gyms');
 var Boss = require('./model/bosses');
 var Raid = require('./model/raids');
