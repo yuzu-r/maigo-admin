@@ -12,7 +12,7 @@ class Gym extends Component {
 		let isExRaidEligible = this.props.gym.is_ex_eligible;
 		let gmap = 'Google Maps link is missing.'
 		if (gmapLink !== undefined) {
-			gmap = <a href={gmapLink} target="_blank">Google Maps Link</a>
+			gmap = <a href={gmapLink} target="_blank" rel="noopener noreferrer">Google Maps Link</a>
 		}
 		return(
 			<div className = 'tiny-indent'>
