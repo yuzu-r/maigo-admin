@@ -20,7 +20,7 @@ var Log = require('./model/logs');
 var stringToBoolean = require('./helpers/utilities.js');
 
 console.log('mongo connect: ', mongoURI);
-mongoose.connect(mongoURI, { useMongoClient: true });
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -75,7 +75,6 @@ router.route('/gyms').get(function (req, res) {
 		return res.status(200).json({ message: 'gym successfully added', success: true });
 	});
 });
-
 router.route('/gyms/:gym_id').put(function (req, res) {
 	Gym.findById(req.params.gym_id, function (err, gym) {
 		if (err) {
